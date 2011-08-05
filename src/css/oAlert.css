@@ -1,0 +1,235 @@
+.oalert-overlay { position: fixed; _position: absolute; top: 0; left: 0; right: 0; background-color: #000; }
+
+.oalert { display: inline-block; position: fixed; _position: absolute; font-size: 13px; line-height: 20px; text-align: left; background-color: #fff; border: 1px solid #000; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; box-shadow: 1px 3px 6px #222; -webkit-box-shadow: 1px 3px 6px #222; -moz-box-shadow: 1px 3px 6px #222; overflow: hidden; }
+
+  .oalert-inner { padding: 0px 7px; }
+  
+    .oalert a, .oalert a:visited, .oalert a:active { color: #3884f4; text-decoration: none; outline: none; }
+    
+      .oalert a:hover { text-decoration: underline; }
+      
+    .oalert-loading-container { display: inline-block; padding: 20px; text-align: center; }
+    
+      .oalert-loading-container { zoom: 1; *display: inline; }
+      
+      .oalert-loading { display: inline-block; margin: auto; vertical-align: middle; width: 24px; height: 24px; background: url(../images/loading.gif); }
+      
+        .oalert-loading { zoom: 1; *display: inline; }
+  
+    .oalert-title { margin: 6px 0; font-size: 14px; line-height: 24px; font-weight: bold; }
+
+    .oalert-content { margin: 6px 0; padding: 0 5px; }
+   	
+   	.oalert-inputs { margin: 6px 5px; }
+   	
+   	  .oalert-input-label {  }
+  
+      .oalert-input { display: block; margin: 5px 0; padding: 5px 10px; width: 88%; border: 1px solid #aaa; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; box-shadow: 0 1px 0 #fff; -webkit-box-shadow: 0 1px 0 #fff; -moz-box-shadow: 0 1px 0 #fff; }
+  
+    .oalert-buttons { margin: 6px 0; font-size: 13px; font-weight: 400; text-align: center; }
+  
+      .oalert-button { display: inline-block; margin: 0 3px; padding: 6px 12px; outline: none; cursor: pointer; }
+      
+      .oalert-button {  zoom: 1; *display: inline; }
+    
+        .oalert-button-flat { border: 1px solid #fff; background: none; }
+    
+        .oalert-button:hover {  }
+      
+        .oalert-button-down {  }
+                
+/* Facebook 样式 */
+.oalert-facebook { border: 6px solid #848484; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; text-shadow: none; }
+
+  .oalert-facebook .oalert-inner { border: 1px solid #000; }
+  
+    .oalert-facebook a, .oalert-facebook a:visited, .oalert-facebook a:active { color: #3b5998; text-decoration: none; }
+    
+      .oalert-facebook a:hover { text-decoration: underline; }
+  
+    .oalert-facebook .oalert-title {  }
+
+    .oalert-facebook .oalert-content {  }
+  
+    .oalert-facebook .oalert-input {  }
+  
+    .oalert-facebook .oalert-buttons {  }
+    
+      .oalert-facebook .oalert-button { padding: 3px 10px; border: 1px solid #2b4680; color: #fff; background: #627aac; background: -webkit-linear-gradient(#8a9cc2, #5b73a3); background: -o-linear-gradient(#8a9cc2, #5b73a3); background: -moz-linear-gradient(#8a9cc2, #5b73a3); text-shadow: none; }
+      
+        .oalert-facebook .oalert-button-flat { background: #a8b8da; }
+      
+        .oalert-facebook .oalert-button:hover { background: #506ca8; background: -webkit-linear-gradient(#506ca8, #405e9e); background: -o-linear-gradient(#506ca8, #405e9e); background: -moz-linear-gradient(#506ca8, #405e9e); }
+        
+        .oalert-facebook .oalert-button-down { background: #000; }
+        
+/* Twitter 样式 */
+.oalert-twitter { border: 5px solid #808080; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+
+  .oalert-twitter .oalert-inner {  }
+  
+    .oalert-twitter .oalert-title {  }
+
+    .oalert-twitter .oalert-content {  }
+  
+    .oalert-twitter .oalert-input {  }
+  
+    .oalert-twitter .oalert-buttons {  }
+    
+      .oalert-twitter .oalert-button { padding: 3px 10px; border: 1px solid #bbb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: -webkit-linear-gradient(#f2f2f2, #e2e2e2); background: -o-linear-gradient(#f2f2f2, #e2e2e2); background: -moz-linear-gradient(#f2f2f2, #e2e2e2); }
+      
+        .oalert-twitter .oalert-button-flat { background: none; }
+      
+        .oalert-twitter .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #ddd; background: -webkit-linear-gradient(#eee, #d2d2d2); background: -o-linear-gradient(#eee, #d2d2d2); background: -moz-linear-gradient(#eee, #d2d2d2); }
+        
+        .oalert-twitter .oalert-button-down { background: #000; }
+
+/* Google Message 样式 */
+.oalert-google { border: 1px solid #000; color: #000; background-color: #fff1a8; background: -webkit-linear-gradient(#fff7cf, #ffe871); background: -o-linear-gradient(#fff7cf, #ffe871); background: -moz-linear-gradient(#fff7cf, #ffe871); }
+
+  .oalert-google .oalert-inner {  }
+  
+    .oalert-google .oalert-title {  }
+
+    .oalert-google .oalert-content {  }
+  
+    .oalert-google .oalert-input {  }
+  
+    .oalert-google .oalert-buttons {  }
+  
+      .oalert-google .oalert-button { padding: 3px 10px; border: 1px solid #bbb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #ffeb80; background: -webkit-linear-gradient(#ffeb80, #ffdb22); background: -o-linear-gradient(#ffeb80, #ffdb22); background: -moz-linear-gradient(#ffeb80, #ffdb22); }
+    
+        .oalert-google .oalert-button-flat { background: none; }
+    
+        .oalert-google .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #ffda1a; background: -webkit-linear-gradient(#fcde43, #ffda1a); background: -o-linear-gradient(#fcde43, #ffda1a); background: -moz-linear-gradient(#fcde43, #ffda1a); }
+      
+        .oalert-google .oalert-button-down { background: #000; }
+
+/* OS X 样式 */
+.oalert-osx { border: 1px solid #696969; color: #4a4a4a; text-shadow: 0 1px #f0f0f0; background-color: #efefef; background: -webkit-linear-gradient(#efefef, #cacaca); background: -o-linear-gradient(#efefef, #cacaca); background: -moz-linear-gradient(#efefef, #cacaca); }
+
+  .oalert-osx .oalert-inner {  }
+  
+    .oalert-osx .oalert-title {  }
+
+    .oalert-osx .oalert-content {  }
+  
+    .oalert-osx .oalert-input {  }
+  
+    .oalert-osx .oalert-buttons {  }
+  
+      .oalert-osx .oalert-button { padding: 3px 10px; text-shadow: 0 1px #e0e0e0; border: 1px solid #7f7f7f; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #e8e8e8; background: -webkit-linear-gradient(#e8e8e8, #c8c8c8); background: -o-linear-gradient(#e8e8e8, #c8c8c8); background: -moz-linear-gradient(#e8e8e8, #c8c8c8); }
+    
+        .oalert-osx .oalert-button-flat { background: none; }
+    
+        .oalert-osx .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #e0e0e0; background: -webkit-linear-gradient(#e0e0e0, #b7b7b7); background: -o-linear-gradient(#e0e0e0, #b7b7b7); background: -moz-linear-gradient(#e0e0e0, #b7b7b7); }
+      
+        .oalert-osx .oalert-button-down { background: #000; }
+
+/* 黑色样式 */
+.oalert-black { background-color: #000; border: 1px solid #999; color: #fff; text-shadow: none; }
+
+  .oalert-black .oalert-inner {  }
+  
+    .oalert-black .oalert-content {  }
+  
+    .oalert-black .oalert-buttons { color: #fff; }
+    
+      .oalert-black .oalert-button { color: #fff; }
+
+/* 灰色样式 */
+.oalert-grey { border: 1px solid #ddd; color: #999; background-color: #efefef; background: -webkit-linear-gradient(#fafafa, #efefef); background: -o-linear-gradient(#fafafa, #efefef); background: -moz-linear-gradient(#fafafa, #efefef); }
+
+  .oalert-grey .oalert-inner {  }
+  
+    .oalert-grey .oalert-title {  }
+
+    .oalert-grey .oalert-content {  }
+  
+    .oalert-grey .oalert-input {  }
+  
+    .oalert-grey .oalert-buttons {  }
+  
+      .oalert-grey .oalert-button { padding: 3px 10px; border: 1px solid #bbb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #f2f2f2; background: -webkit-linear-gradient(#f2f2f2, #e2e2e2); background: -o-linear-gradient(#f2f2f2, #e2e2e2); background: -moz-linear-gradient(#f2f2f2, #e2e2e2); }
+    
+        .oalert-grey .oalert-button-flat { background: none; }
+    
+        .oalert-grey .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #eee; background: -webkit-linear-gradient(#eee, #d2d2d2); background: -o-linear-gradient(#eee, #d2d2d2); background: -moz-linear-gradient(#eee, #d2d2d2); }
+      
+        .oalert-grey .oalert-button-down { background: #000; }
+
+/* 绿色样式 */
+.oalert-green { border: 1px solid #afc76c; color: #779b39; background-color: #eff4d4; background: -webkit-linear-gradient(#f0f3e0, #e8f3ad); background: -o-linear-gradient(#f0f3e0, #e8f3ad); background: -moz-linear-gradient(#f0f3e0, #e8f3ad); }
+
+  .oalert-green .oalert-inner {  }
+  
+    .oalert-green .oalert-title {  }
+
+    .oalert-green .oalert-content {  }
+  
+    .oalert-green .oalert-input {  }
+  
+    .oalert-green .oalert-buttons {  }
+  
+      .oalert-green .oalert-button { padding: 3px 10px; border: 1px solid #bfbfbf; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #e8f3aa; background: -webkit-linear-gradient(#e8f3aa, #e4f390); background: -o-linear-gradient(#e8f3aa, #e4f390); background: -moz-linear-gradient(#e8f3aa, #e4f390); }
+    
+        .oalert-green .oalert-button-flat { background: none; }
+    
+        .oalert-green .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #e7f2ac; background: -webkit-linear-gradient(#e7f2ac, #ddef7a); background: -o-linear-gradient(#e7f2ac, #ddef7a); background: -moz-linear-gradient(#e7f2ac, #ddef7a); }
+      
+        .oalert-green .oalert-button-down { background: #000; }
+
+/* 黄色样式 */
+.oalert-yellow { border: 1px solid #eac946; color: #b09e56; background-color: #fff5cc;  background: -webkit-linear-gradient(#fff5cc, #ffe88d); background: -o-linear-gradient(#fff5cc, #ffe88d); background: -moz-linear-gradient(#fff5cc, #ffe88d); }
+
+  .oalert-yellow .oalert-inner {  }
+  
+    .oalert-yellow .oalert-title {  }
+
+    .oalert-yellow .oalert-content {  }
+  
+    .oalert-yellow .oalert-input {  }
+  
+    .oalert-yellow .oalert-buttons {  }
+  
+      .oalert-yellow .oalert-button { padding: 3px 10px; border: 1px solid #bbb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #ffe991; background: -webkit-linear-gradient(#ffe991, #ffe066); background: -o-linear-gradient(#ffe991, #ffe066); background: -moz-linear-gradient(#ffe991, #ffe066); }
+    
+        .oalert-yellow .oalert-button-flat { background: none; }
+    
+        .oalert-yellow .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #ffdf60; background: -webkit-linear-gradient(#ffdf60, #fdd740); background: -o-linear-gradient(#ffdf60, #fdd740); background: -moz-linear-gradient(#ffdf60, #fdd740); }
+      
+        .oalert-yellow .oalert-button-down { background: #000; }
+
+
+/* 红色样式 */
+.oalert-red { border: 1px solid #eba8a8; color: #c66; background-color: #fae1de;  background: -webkit-linear-gradient(#fae1de, #fdc3bc); background: -o-linear-gradient(#fae1de, #fdc3bc); background: -moz-linear-gradient(#fae1de, #fdc3bc); }
+
+  .oalert-red .oalert-inner {  }
+  
+    .oalert-red .oalert-title {  }
+
+    .oalert-red .oalert-content {  }
+  
+    .oalert-red .oalert-input {  }
+  
+    .oalert-red .oalert-buttons {  }
+  
+      .oalert-red .oalert-button { padding: 3px 10px; border: 1px solid #bbb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #fcc9c2; background: -webkit-linear-gradient(#fcc9c2, #fdaca2); background: -o-linear-gradient(#fcc9c2, #fdaca2); background: -moz-linear-gradient(#fcc9c2, #fdaca2); }
+    
+        .oalert-red .oalert-button-flat { background: none; }
+    
+        .oalert-red .oalert-button:hover { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #fea194; background: -webkit-linear-gradient(#fea194, #ff9283); background: -o-linear-gradient(#fea194, #ff9283); background: -moz-linear-gradient(#fea194, #ff9283); }
+      
+        .oalert-red .oalert-button-down { background: #000; }
+        
+/* 成功 */        
+.oalert-success .oalert-content {  }
+        
+/* 失败 */        
+.oalert-error .oalert-content {  }
+
+/* 信息 */        
+.oalert-info .oalert-content {  }
+
+/* 警告 */        
+.oalert-warn .oalert-content {  }

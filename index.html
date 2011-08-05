@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<link rel='stylesheet' type='text/css' href='lib/prettify/desert.css' />
+<link rel='stylesheet' type='text/css' href='src/css/oAlert.css' />
+<title>oAlert</title>
+<style>
+<!--
+body { padding: 0; margin: 0; font: 15px/26px 'Lucida Grande','Lucida Sans Unicode',Helvetica,Arial,Verdana,sans-serif; text-align: center; background: #666; letter-spacing: 0.3px; }
+pre { text-shadow: none; }
+.clear { clear: both; }
+.logo { margin: 20px auto; width: 800px; text-align: left; }
+  .logo_name  {  color: #fff; font-size: 42px; font-weight: bold; text-shadow: 2px 2px 2px #333; }
+  .logo_sub { float: right; }
+    .logo_sub a { color: #fff; font-size: 16px; text-decoration: none; text-shadow: 1px 1px 1px #333; }
+      .logo_sub a:hover { color: #eee; text-decoration: underline; }.container { margin: 0px auto 40px auto;  width: 740px; padding: 20px 30px 30px 30px; text-align: left; text-shadow: 1px 1px 0 #fff; background: #eee; border: 1px solid #fff; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; box-shadow: 2px 2px 5px #333; }
+  .side_bar { float: left; margin-left: -50px; padding-right: 50px; width: 20%; }
+    .navi { margin: 15px 0 0 0; list-style: none; text-align: right; }
+    .navi li { margin: 0 0 16px 0; }
+    .navi a { font-size: 20px; color: #999; text-shadow: 1px 1px 0px #fff; text-decoration: none; }
+    .navi a:hover { color: #000; }
+  .main{ float: left; width: 80%; }
+    .title { margin: 15px 0; font-size: 26px; clear: both; }
+    .sub_title { margin: 5px 0; font-size: 20px; line-height: 30px; }
+    .content { padding: 0 0 0 26px; }
+    .button { display: inline-block; padding: 5px 10px; background: #f7f7f7; background: -webkit-linear-gradient(#f7f7f7, #d7d7d7); background: -o-linear-gradient(#f7f7f7, #d7d7d7); background: -moz-linear-gradient(#f7f7f7, #d7d7d7); border: 1px solid #bbb; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; box-shadow: 0 2px 3px #aaa; -webkit-box-shadow: 0 2px 3px #aaa; -moz-box-shadow: 0 2px 3px #aaa; text-shadow: 0 1px 0 #fff; cursor: pointer; }
+    .button {  zoom: 1; *display: inline; }
+      .button:hover { background: #d7d7d7; background: -webkit-linear-gradient(#d7d7d7, #c7c7c7); background: -o-linear-gradient(#d7d7d7, #c7c7c7); background: -moz-linear-gradient(#d7d7d7, #c7c7c7); }
+    .mail { margin: 2px 10px; color: #666; font-size: 14px; }
+    .feature_list { margin: 0; padding: 0; list-style: none; }
+    .feature_list li { line-height: 26px; }
+    .src_label { font-size: 15px; }
+    .src_link { font-size: 20px; }
+    .history_title { display: block; margin: 15px 0 0 0; font-size: 18px; color: #000; clear: both; }
+    .history_time { margin: 2px 8px; font-size: 13px; color: #666; text-shadow: none; }
+    .history { display: block; margin: 5px 0 0 30px; font-size: 15px; line-height: 24px; clear: both; }
+    
+    .oalert-style-selector-container { display: block; position: fixed; padding: 6px 10px; bottom: -5px; right: -5px; background: #f7f7f7; border: 5px solid #bbb; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+    .oalert_label { display: inline-block; margin: 10px; padding: 0 10px; color: #666; font-size: 16px; line-height: 36px; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+    .oalert_label { zoom: 1; *display: inline; }
+    #oalet-box { margin: 15px 0; height: 100px; background: #fff; }
+    pre { padding: 5px 10px; }
+-->
+</style>
+<script language='javascript' type='text/javascript' src='lib/json2.js'></script>
+<script language='javascript' type='text/javascript' src='lib/jquery-1.6.2.js'></script>
+<script language='javascript' type='text/javascript' src='lib/underscore.js'></script>
+<script language='javascript' type='text/javascript' src='lib/backbone.js'></script>
+<script language='javascript' type='text/javascript' src='lib/prettify/prettify.js'></script>
+<script language='javascript' type='text/javascript' src='src/js/oAlert.js'></script>
+</head>
+
+<body>
+<div class='logo'>
+	<span class='logo_name'>oAlert</span>
+</div>
+<div class='container'>
+	<div class='side_bar'>
+		<ul class='navi'>
+			<li><a href='#about'>关于</a></li>
+			<li><a href='#author'>作者</a></li>
+			<li><a href='#maintainer'>维护人员</a></li>
+			<li><a href='#version'>版本</a></li>
+			<li><a href='#update'>最近更新</a></li>
+			<li><a href='#feature'>特性</a></li>
+			<li><a href='#licence'>开源协议</a></li>
+			<li><a href='#source'>源代码</a></li>
+			<li><a href='#download'>下载</a></li>
+			<li><a href='#examples'>示例</a></li>
+			<li><a href='#history'>修改历史</a></li>
+		</ul>
+	</div>
+	<div class='main'>
+		<a name='about'></a>
+		<div class='title'>关于</div>
+		<div class='content'>一个方便实用、功能强大的提示框组件</div>
+		<div class='title'>作者</div>
+		<div class='content'>博汇数码EasyTrace团队</span></div>
+		<a name='maintainer'></a>
+		<div class='title'>维护人员</div>
+		<div class='content'>nino zhang<span class='mail'>(ninozhang@foxmail.com)</span></div>
+		<a name='version'></a>
+		<div class='title'>版本</div>
+		<div class='content'>0.0.1 beta</div>
+		<a name='update'></a>
+		<div class='title'>最近更新</div>
+		<div class='content'>2011/8/5</div>
+		<a name='feature'></a>
+		<div class='title'>特性</div>
+		<div class='content'>
+			<ul class='feature_list'>
+				<li>简单的配置即可实现强大的提示框功能，自定义功能强大</li>
+				<li>内容支持异步加载</li>
+				<li>内置8种外观供选择，包含：Facebook、Twitter、Google、OSX等样式</li>
+				<li>可通过修改CSS可实现个性化外观</li>
+				<li>兼容多种浏览器：Chrome、Safari、Firefox、Opera、IE</li>
+				<li>兼容IE6哦，亲！╮(╯_╰)╭</li>
+			</ul>
+		</div>
+		<a name='licence'></a>
+		<div class='title'>开源协议</div>
+		<div class='content'>MIT</div>
+		<a name='source'></a>
+		<div class='title'>源代码</div>
+		<div class='content'><span class='src_label'>托管在GitHub：</span><a href='https://github.com/botwave/oAlert' class='src_link'>https://github.com/botwave/oAlert</a></div>
+		<a name='download'></a>
+		<div class='title'>下载</div>
+		<div class='content'><a href='https://github.com/botwave/oAlert/downloads' class='src_link'>https://github.com/botwave/oAlert/downloads</a></div>
+		<a name='examples'></a>
+		<div class='title'>示例</div>
+		<div class="content">
+			<script type="text/javascript">
+				var className = '';
+			</script>
+			<div class="sub_title">简单调用（无样式）</div>
+			<div id="oalert-default" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#oalert-default').click(function(event) {
+					new oAlert();
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert();</pre>
+			<div class="sub_title">简单样式</div>
+			<div id="simple_style" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#simple_style').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  }
+});</pre>
+			<div class="sub_title">自定义内容</div>
+			<div id="custom_text" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#custom_text').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    text: 'Hello World!'
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    text: 'Hello World!'
+  }
+});</pre>
+			<div class="sub_title">自定义标题</div>
+			<div id="custom_title" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#custom_title').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    title: 'oAlert',
+					    text: 'Hello World!'
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    title: 'oAlert',
+    text: 'Hello World!'
+  }
+});</pre>
+			<div class="sub_title">自定义按钮</div>
+			<div id="custom_button" class="button">oAlert!</div>
+			<div id='custom_button_label' class='oalert_label'></div>
+			<script type="text/javascript">
+				$('#custom_button').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    title: 'oAlert',
+					    text: 'Hello World!',
+					    buttons: [
+					    	{ label: '确定', code: 'yes' },
+					    	{ label: '取消', code: 'no', flat: true },
+					    	{ label: '不关闭', code: 'till', hide: false }
+					    ]
+					  },
+					  callbacks: {
+					  	buttonClick: function(code) {
+					  	  $('#custom_button_label').html('点击了按钮:' + code);
+					  	  if(code == 'till') {
+					  	    alert('点击我不会关闭提示框哦～');
+					  	  }
+					  	}
+					  },
+					  hide: {
+					    auto: false
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    title: 'oAlert',
+    text: 'Hello World!',
+    buttons: [
+      // 普通的按钮，点击后关闭提示框，激活回调方法
+      { label: '确定', code: 'yes' },
+      // 平面化危险操作按钮的样式，降低误点击的可能
+      { label: '取消', code: 'no', flat: true }, 
+      // 点击按钮不关闭提示框
+      { label: '不关闭', code: 'still', hide: false } 
+    ]
+  },
+  callbacks: {
+    buttonClick: function(code) {
+      $('#custom_button_label').html('点击了按钮:' + code);
+    }
+  },
+  hide: {
+    auto: false
+  }
+});</pre>
+			<div class="sub_title">自定义样式</div>
+			<div id="custom_style" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#custom_style').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className,
+					    opacity: 0.8,
+					    minWidth: 500,
+					    minHeight: 150
+					  },
+					  content: {
+					    title: 'oAlert',
+					    text: 'Hello World!',
+					    buttons: [
+					    	{ label: '确定', code: 'yes' },
+					    	{ label: '取消', code: 'no', flat: true }
+					    ]
+					  },
+					  position: {
+					    top: 0.5
+					  },
+					  show: {
+					    delay: 500,
+					    duration: 1000
+					  },
+					  hide: {
+					    delay: 10000,
+					    duration: 700
+					  },
+					  overlay: {
+					  	style: {
+						    color: '#fff',
+						    opacity: .2
+					    },
+					  	show: {
+					  	  duration: 500
+					  	},
+					  	hide: {
+					  	  duration: 1400
+					  	}
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: '',
+    opacity: 0.8,    // 提示框透明度
+    minWidth: 500,   // 最小宽度
+    minHeight: 150   // 最小高度
+  },
+  content: {
+    title: 'oAlert',
+    text: 'Hello World!',
+    buttons: [
+      { label: '确定', code: 'yes' },
+      { label: '取消', code: 'no', flat: true }
+    ]
+  },
+  position: {
+    top: 0.5          // 位置，0.5为正中间
+  },
+  show: {
+    delay: 500,      // 延迟0.5秒出现
+    duration: 1000    // 过渡动画时长为1秒
+  },
+  hide: {
+    delay: 10000,     // 10秒后自动关闭
+    duration: 700     // 过渡动画时长为0.7秒
+  },
+  overlay: {
+    style: {
+      color: '#fff',  // 覆盖层颜色为白色
+      opacity: .2     // 覆盖层透明度为0.2
+    },
+    show: {
+      duration: 500,  // 覆盖层过渡动画时长为0.5秒
+    },
+    hide: {
+      duration: 1400  // 覆盖层过渡动画时长为1.4秒
+    }
+  }
+});</pre>
+			<div class="sub_title">回调方法</div>
+			<div id="callbacks" class="button">oAlert!</div>
+			<div id='callbacks_label' class='oalert_label' style='display: block;clear: both;'></div>
+			<script type="text/javascript">
+				$('#callbacks').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    title: 'oAlert',
+					    text: 'Hello World!',
+					    buttons: [
+					    	{ label: '关闭' }
+					    ]
+					  },
+					  callbacks: {
+					    beforeRender: function() {
+					      $('#callbacks_label').html('开始渲染');
+					    },
+					    render: function() {
+					      $('#callbacks_label').append('<br/>渲染完成');
+					    },
+					    beforeReposition: function() {
+					      $('#callbacks_label').append('<br/>&nbsp;&nbsp;重定位开始');
+					    },
+					    reposition: function() {
+					      $('#callbacks_label').append('<br/>&nbsp;&nbsp;重定位完成');
+					    },
+					    beforeShow: function() {
+					      $('#callbacks_label').append('<br/>&nbsp;&nbsp;开始显示');
+					    },
+					    show: function() {
+					      $('#callbacks_label').append('<br/>&nbsp;&nbsp;显示完成');
+					    },
+					    beforeHide: function() {
+					      $('#callbacks_label').append('<br/>开始关闭');
+					    },
+					    hide: function() {
+					      $('#callbacks_label').append('<br/>关闭完成');
+					    },
+					    buttonClick: function() {
+					      $('#callbacks_label').append('<br/>&nbsp;&nbsp;按下按钮');
+					    }
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    title: 'oAlert',
+    text: 'Hello World!',
+    buttons: [
+      { label: '关闭' }
+    ]
+  },
+  callbacks: {
+    beforeRender: function() {
+      $('#callbacks_label').html('开始渲染');
+    },
+    render: function() {
+      $('#callbacks_label').append('渲染完成');
+    },
+    beforeReposition: function() {
+      $('#callbacks_label').append('重定位开始');
+    },
+    reposition: function() {
+      $('#callbacks_label').append('重定位完成');
+    },
+    beforeShow: function() {
+      $('#callbacks_label').append('开始显示');
+    },
+    show: function() {
+      $('#callbacks_label').append('显示完成');
+    },
+    beforeHide: function() {
+      $('#callbacks_label').append('开始关闭');
+    },
+    hide: function() {
+      $('#callbacks_label').append('关闭完成');
+    },
+    buttonClick: function() {
+      $('#callbacks_label').append('按下按钮');
+    }
+  }
+});</pre>
+			<div class="sub_title">Twitter/Google提示样式</div>
+			<div id="twitter" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#twitter').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    text: 'Hello World!'
+					  },
+					  position: {
+					    top: 'content'
+					  },
+					  show: {
+					    modal: false,
+					    effect: 'slideDown'
+					  },
+					  hide: {
+					    effect: 'slideUp'
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    text: 'Hello World!'
+  },
+  position: {
+    top: 'content'
+  },
+  show: {
+    modal: false,
+    effect: 'slideDown'
+  },
+  hide: {
+    effect: 'slideUp'
+  }
+});</pre>
+			<div class="sub_title">自定义容器</div>
+			<div id="custom_parent" class="button">oAlert!</div>
+			<div id="oalet-box" style="position: relative;"></div>
+			<script type="text/javascript">
+				$('#custom_parent').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  parent: '#oalet-box',
+					  content: {
+					    text: 'Hello World!'
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  parent: '#oalet-box',
+  content: {
+    text: 'Hello World!'
+  }
+});</pre>
+			<div class="sub_title">异步加载内容</div>
+			<div id="ajax_content" class="button">oAlert!</div>
+			<script type="text/javascript">
+				$('#ajax_content').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    ajax: {
+					    	url: 'res/user.json',
+					    	data: { uid: 1 },
+					    	delay: 2000,
+					    	loading: true,
+					    	success: function(data, status) {
+					    		var user = data.user;
+					    		this.set('content', {
+					    			title: '用户资料',
+					    			text: '编号：' + user.uid + '\n' +
+					    				  '用户名：' + user.name + '\n' +
+					    				  '邮箱：' + user.email + '\n' +
+					    				  '<image src="' + user.avatar + '"/>',
+					    		    buttons: [
+					    		    	{ label: '关闭', code: 'close' }
+					    		    ]
+					    		});
+					    	},
+					    	error: function(status, errorThrown) {
+					    		this.set('content.title', '加载失败');	
+					    		this.set('content.text', '加载内容失败，请重试');
+					    		this.set('content.buttons', [{ label: '关闭', code: 'close' }]);
+					    	}
+					    }
+					  },
+					  hide: {
+					    delay: 120000
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    ajax: {
+      url: 'res/user.json', // 请求地址
+      type: 'GET', // 请求方法，'GET'或'POST'
+      data: { uid: 1 }, // 参数值
+      dataType: 'json', // 数据格式，默认为json
+      delay: 2000,  // 延迟2秒发送请求
+      loading: true, // true为显示加载过程，false为加载完毕才显示
+      success: function(data, status) { // 请求成功回调方法
+        var user = data.user; // data为返回的数据
+        this.set('content', {
+          title: '用户资料',
+          text: '编号：' + user.uid + '\n' +
+                '用户名：' + user.name + '\n' +
+                '邮箱：' + user.email + '\n' +
+                '&lt;image src="' + user.avatar + '"/&gt;',
+          buttons: [
+            { label: '关闭' }
+          ]
+        });
+      },
+      error: function(status, errorThrown) { // 请求失败回调方法
+        this.set('content.title', '加载失败');
+        this.set('content.text', '加载内容失败，请重试');
+        this.set('content.buttons', [{ label: '关闭' }]);
+      }
+    }
+  },
+  hide: {
+    delay: 120000
+  }
+});</pre>
+			<div class="sub_title">文本输入框</div>
+			<div id="custom_input" class="button">oAlert!</div>
+			<div id='custom_input_label' class='oalert_label' style="display: block; clear: both;"></div>
+			<script type="text/javascript">
+				$('#custom_input').click(function(event) {
+					new oAlert({
+					  style: {
+					    className: className
+					  },
+					  content: {
+					    title: '用户资料',
+					    text: '请输入您的相关资料',
+					    buttons: [
+					    	{ label: '确定', code: 'yes' },
+					    	{ label: '取消', code: 'no', flat: true }
+					    ],
+					    inputs: [
+					    	{ field: 'wont-be-created', create: false, defaultValue: '不会创建我' },
+					    	{ field: 'name', label: '用户名', defaultValue: 'nino zhang' },
+					    	{ field: 'password', label: '密码：', type: 'password' },
+					    	{ field: 'age', label: '年龄（只读）', defaultValue: '18岁', readOnly: true },
+					    	{ field: 'tag', label: '我的标签（最长10个字符）', maxLength: 10 },
+					    	{ field: 'disabled', label: '不给你输入：', defaultValue: '娃哈哈哈哈', disabled: true }
+					    ]
+					  },
+					  callbacks: {
+					    buttonClick: function(code, values) {
+					   	  var label = $('#custom_input_label').empty();
+					      label.append('点击了按钮:' + code + '<br/>');
+					      for(var key in values) {
+					        label.append(key + ': ' + values[key] + '<br/>');
+					      }
+					    }
+					  },
+					  hide: {
+					    auto: false
+					  }
+					});
+				});
+			</script>
+			<pre class="prettyprint">
+new oAlert({
+  style: {
+    className: ''
+  },
+  content: {
+    title: '用户资料',
+    text: '请输入您的相关资料',
+    buttons: [
+      { label: '确定', code: 'yes' },
+      { label: '取消', code: 'no', flat: true }
+    ],
+    inputs: [
+      // 不被创建的输入框
+      { field: 'wont-be-created', create: false, 
+        defaultValue: '不会创建我' },
+      // 带默认值的输入框
+      { field: 'name', label: '用户名', 
+        defaultValue: 'nino zhang' },
+      // 密码输入框
+      { field: 'password', label: '密码：', 
+        type: 'password' },
+      // 只读输入框
+      { field: 'age', label: '年龄（只读）', 
+        defaultValue: '18岁', readOnly: true },
+      // 限制最多可输入字符数的输入框
+      { field: 'tag', label: '我的标签（最长10个字符）', 
+        maxLength: 10 },
+      // 失效的输入框
+      { field: 'disabled', label: '不给你输入：', 
+        defaultValue: '娃哈哈哈哈', disabled: true }
+    ]
+  },
+  callbacks: {
+    buttonClick: function(code, values) {
+      var label = $('#custom_input_label').empty();
+      label.append('点击了按钮:' + code + '&lt;br/&gt;');
+      // 输入框的值保存在values中
+      for(var key in values) {
+        label.append(key + ': ' + values[key] + '&lt;br/&gt;');
+      }
+    }
+  },
+  hide: {
+    auto: false
+  }
+});</pre>
+		</div>
+		<a name='history'></a>
+		<div class='title'>修改历史</div>
+		<div class='content'>
+			<span class='history_title'>0.0.1 beta
+				<span class='history_time'>2011/8/5 星期五</span>
+			</span>
+			<span class='history'>
+				第一个功能比较完善的测试版<br/>
+				暂未支持的特性：<br/>
+				　尚未加入关闭按钮<br/>
+				　更多的样式配置<br/>
+				　新的相同内容的提示框覆盖掉就提示框功能<br/>
+				　多个提示框撑开显示位置功能
+			</span>
+		</div>
+	</div>
+	<div class='clear'></div>
+</div>
+<div class='oalert-style-selector-container'>
+	样式：
+	<select id='oalert-style-selector'>
+		<option value=''>Default</option>
+		<option value='facebook'>Facebook</option>
+		<option value='twitter'>Twitter</option>
+		<option value='google'>Google</option>
+		<option value='osx'>OSX</option>
+		<option value='green'>Green</option>
+		<option value='yellow'>Yellow</option>
+		<option value='red'>Red</option>
+		<option value='grey'>Grey</option>
+	</select>
+	<script type="text/javascript">
+		$('#oalert-style-selector').change(function(event) {
+			var oldClassName = className;
+			className = $(this).val();
+			$('.oalert').removeClass(oldClassName);
+			$('.oalert').addClass(className);
+			$('pre').each(function() {
+				$(this).text($(this).text().replace("className: '" + oldClassName + "'", "className: '" + className + "'"));
+			});
+			prettyPrint();
+		});
+	</script>
+</div>
+<script type='text/javascript'>
+$(document).ready(function() {
+	$('#oalert-style-selector').val('facebook').change();
+	prettyPrint();
+});
+</script>
+<script type='text/javascript'>
+  
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24589740-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
